@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Games</title>
+
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            background-color: rgb(11, 11, 11);
+        }
+
+    /* navbar start*/    
+        .nav{
+            position: fixed;
+            width: 100%;
+            top: 0px;
+            z-index: 1;
+            background-color: black;
+            height: 3.1rem;
+            box-shadow: 0px 2px 8px rgb(229, 33, 33);
+            margin: 0;
+            padding: 0;
+        }
+        
+        .logo img{
+            position: fixed;
+            left: .5em;
+            top: .5em;
+            height: 2em;
+        }
+
+        .nav-links{
+            margin: 0;
+            padding: 0;
+            /*border: 2px solid red;*/
+            float: right;
+        }
+        .nav ul a{
+            text-decoration: none;
+            color: white;
+            font-size: 1rem;
+            font-weight: bold;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+
+        .hideOnMobile{
+            display: block;
+        }
+        .open{
+            display: none;
+        }
+
+        .nav-links{
+            margin: 0;
+            padding: 0;
+        }
+        .nav-links ul{
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+            display: flex;
+        }
+
+        .nav-lists a:hover{
+            /*text-decoration: underline;*/
+        }
+        .nav-lists li{
+            padding: 1rem 2rem;
+            /*border: 1px solid red;*/
+        }
+        .nav-lists li:hover{
+            background-color: rgb(188, 44, 44);
+        }
+
+
+        .store-drop{
+            position: relative;
+        }
+        .store-drop ul {
+            display: none;
+            margin-top: 1rem;
+            margin-left: -2rem;
+            flex-direction: column;
+            position: absolute;
+            background-color: black;
+            /*border: 2px solid red;*/
+        }
+        .store-drop:hover .dropdown{
+            display: block;
+        }
+
+        .store-button{
+            margin: 0;
+            padding: 0;
+        }
+
+        @media screen and (max-width: 600px){
+            .hideOnMobile{
+                display: none;
+            }
+
+            .store-drop{
+                display: none;
+            }
+
+            .open{
+                display: block;
+            }
+            
+            .nav-lists li{
+            padding: .5rem 1rem;
+        }
+        }
+    /*navbar end*/          
+
+    /*hamburger menu start*/
+        .side-wrapper{
+            display: none;
+            margin: 0;
+            padding: 0;
+            position: fixed;
+            top: 0;
+            right: 0;
+            background-color: rgb(53, 53, 53);
+            height: 100vh;
+            width: 100%;
+            z-index: 999;
+            /*box-shadow: -.2rem 0rem 2rem rgb(141, 141, 141);*/
+        }
+
+        .side-wrapper ul{
+        }
+        .home-link{
+            padding-top: 1rem;
+            padding-bottom: 2rem; 
+        }
+        .login-link{
+            padding-top: 2rem;
+        }
+        .deals-link{
+            padding-top: 2rem;
+            padding-bottom: 2rem;
+        }
+        .store-sub-links li{
+            list-style-type: '- ';
+        }
+
+        .side-bar{
+            list-style-type: none;
+            /*border: 1px solid red;*/
+            padding-left: 40%;
+        }
+
+        .side-bar .close{
+            text-align: right;
+            margin: .5rem;
+        }
+
+        .side-wrapper ul li{
+            /*text-align: left;*/
+        }
+
+        .side-wrapper ul a{
+            color: rgb(188, 44, 44);
+        }
+        .side-wrapper ul a:hover{
+            color: rgb(255, 255, 255);
+        }
+    /*hamburger menu end*/
+
+    /*search bar css start*/
+        .form-div {
+            display: inline-block;
+            padding: 0;
+            margin: 0;
+            margin-top: 2.5rem;
+            /*background-color: rgb(51, 126, 192);*/
+        }
+
+        .search-form {
+            display: flex;
+            padding: 0;
+            margin: 0;
+            width: 100%;
+        }
+
+        .search-bar {
+            box-sizing: border-box;
+            width: 17rem;
+            height: 3rem;
+            border: none;
+            border-radius: 5px;
+            outline: none;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+
+        .search-button {
+            box-sizing: border-box;
+            margin-left: 1rem;
+            padding: 1rem;
+            background-color: rgb(188, 44, 44);
+            color: aliceblue;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .search-button:hover {
+            background-color: rgb(169, 3, 3);
+        }
+        .search-button:active {
+            background-color: rgb(69, 69, 69);
+        }
+
+        ::placeholder {
+           font-size: 1rem;
+           /*text-align: center;*/
+        }
+
+        @media  screen and (max-width: 600px) {
+            .search-form {
+                display: flex;
+                flex-direction: column;
+            }
+
+            .search-button {
+                margin-top: 1.5rem;
+                margin-left: 0rem;
+            }
+        }
+    /*search bar css end*/
+
+        main .row1{
+            display: flex;
+            flex-wrap: wrap;
+            gap: 3em;
+            
+            justify-content: space-evenly;
+            margin: 0;
+            padding: 0;
+        }
+
+
+        header{
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            text-align: center;
+            color: rgb(169, 3, 3);
+            margin-top: 5rem;
+            margin-bottom: 5em;
+            /*border: 2px solid white;*/
+        }
+        header h1{
+            font-weight: bolder;
+            color: white;
+            /*text-decoration: underline;*/
+        }
+        .line{
+            border: .1rem solid rgb(169, 3, 3);
+            border-radius: 50%;
+            width: 90%;
+        }
+
+        .container{
+            box-sizing: border-box;
+            /*background-color: rgb(101, 101, 101);
+            border: 1px solid black;
+            border-radius: 5px;*/
+            color: aliceblue;
+
+            /*width: 200px;*/
+        }
+
+        @media  screen and (max-width: 980px) {
+            /*.row1{
+                flex-direction: column;
+            }
+
+            .container{
+                width: 200px;
+                position: relative;
+                left: 7em;
+                
+            }*/
+        }
+
+        .container h3{
+            position: relative;
+            text-align: center;
+            color: aliceblue;
+        }
+        .container a{
+            text-decoration: none;
+            color: black;
+        }
+        .container .img{
+            position: relative;
+            /*left: 2rem;*/
+            width: 12em;
+            box-shadow: 3px 2px 4px rgb(0, 0, 0);
+        }
+        .container p {
+            margin-top: 0px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            text-align: center;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <div class="logo">
+            <a href="index.html">
+                <img src="./Images/logos/Playstation_logo_colour.svg.png" alt="PlayStation logo">
+            </a>
+        </div>
+
+        <div class="side-wrapper">
+            <ul class="side-bar">
+                <li class="close" onclick="closeBar()"><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></a></li>
+                
+                <li class="home-link"><a href="index.html">Home</a></li>
+
+                <li>
+                    <a  class="store-link" href="#">Store</a>
+                    
+                    <ul class="store-sub-links">
+                        <li class=""><a class="" href="console.html">Console</a></li>
+                        <li class=""><a class="" href="games.html">Games</a></li>
+                    </ul>
+                </li>
+    
+                <li class="deals-link"><a href="deals.html">Deals</a></li>
+
+                <li class="cart-link"><a href="#">Cart</a></li>
+                
+                <li class="login-link"><a href="#">Login</a></li>
+            </ul>
+        </div>
+
+        <div class="nav-links">
+            <ul class="nav-lists">
+                <li class="hideOnMobile"><a href="index.html">Home</a></li>
+                
+                <li class="store-drop">
+                    <a  class="store-button" href="#">Store</a>
+                    
+                    <ul class="dropdown">
+                        <li class="store-acc"><a class="" href="console.html">Console</a></li>
+                        <li class="store-acc"><a class="" href="games.html">Games</a></li>
+                    </ul>
+                </li>
+    
+                <li class="hideOnMobile"><a href="deals.html">Deals</a></li>
+                
+                <li class="hideOnMobile"><a href="#">Cart</a></li>
+                
+                <li class="hideOnMobile"><a href="#">Login</a></li>
+                
+                <li class="open" onclick="openBar()"><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 -960 960 960" width="30px" fill="#fff"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header>
+        <h1>Welcome to the PlayStation Store</h1>
+        <h2>Browse Our Latest Games</h2>
+        <hr class="line">
+
+        <div class="form-div">
+            <form action="" method="get" class="search-form">
+                <div>
+                    <input type="search" placeholder="search a game" class="search-bar">
+                </div>
+                <div>
+                    <input type="submit" value="search" class="search-button">
+                </div>
+            </form>
+        </div>
+    </header>
+
+    <main>
+        <section class="row1">
+            <section class="container">
+                <a href="#">
+                    <img class="img" src="./Images/Games/God of War.jpg" alt="God of War Image">
+                </a>
+
+                <p>God of War</p>
+                
+               <!-- <p class="details">details</p>
+                <p>A game about a God fighting a war along side his son.</p>-->
+            </section>
+    
+            <section class="container">
+                <a href="#">
+                    <img class="img" src="./Images/Games/Death Stranding.jpg" alt="Death Stranding Image">
+                </a>
+
+                <p>Death Stranding</p>
+                
+                <!--<p class="details">details</p>
+                <p>A game about a man on an alien planet delivering packages.</p>-->
+            </section>
+    
+            <section class="container">
+                <a href="#">
+                    <img class="img" src="./Images/Games/Horizon Zero Dawn.jpg" alt="Horizon Zero Dawn Image">
+                </a>
+                
+                <p>Horizon Zero Dawn</p>
+
+                <!--<p class="details">details</p>
+                <p>A game about robotic dinosaurs withinin a post apocalyptic setting.</p>-->
+            </section>   
+            
+            <section class="container">
+                <a href="#">
+                    <img class="img" src="./Images/Games/Spider-Man 2.jpg" alt="Horizon Zero Dawn Image">
+                </a>
+
+                <p>Marvel's Spider-Man 2</p>
+                
+                <!--<p class="details">details</p>
+                <p>A game about web slinging spiders in New York City</p>-->
+            </section> 
+
+            <section class="container">
+                <a href="#">
+                    <img class="img" src="./Images/Games/Returnal.jpg" alt="Returnal Image">
+                </a>
+
+                <p>Returnal</p>
+                
+                <!--<p class="details">details</p>
+                <p>A game shooting aliens, however, if you die you lose all progress.</p>-->
+            </section> 
+
+            <section class="container">
+               <!-- <a href="" class="title"><h3>Final Fantasy 7 Remake</h3></a> -->
+    
+                <a href="#">
+                    <img class="img" src="./Images/Games/FF7.jpg" alt="Final Fantasy 7 Remake Image">
+                </a>
+
+                <p>Final Fantasy 7 Remake</p>
+                
+               <!-- <p class="details">details</p>
+                <p>
+                    A game about rebels taking down and evil energy corporation.
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                    Ullam architecto ex excepturi tenetur corrupti aliquid facere totam quod.
+                </p> -->
+            </section> 
+
+            <section class="container">
+                <a href="#">
+                    <img class="img" src="./Images/Games/lies of P.png" alt="Lies of P">
+                </a>
+
+                <p>Lies of P</p>
+            </section> 
+
+            <section class="container">
+                <a href="#">
+                    <img class="img" src="./Images/Games/avatar.jpg" alt="Avatar: Frontiers of Pandora">
+                </a>
+
+                <p>Avatar: Frontiers of Pandora</p>
+            </section> 
+
+            <section class="container">
+                <a href="#">
+                    <img class="img" src="./Images/Games/evil_within_2.jpg" alt="The Evil Within 2">
+                </a>
+
+                <p>The Evil Within 2</p>
+            </section> 
+
+            <section class="container">
+                <a href="#">
+                    <img class="img" src="./Images/Games/detroit.png" alt="Detroit: Become Human">
+                </a>
+
+                <p>Detroit: Become Human</p>
+            </section>
+
+            <section class="container">
+                <a href="#">
+                    <img class="img" src="./Images/Games/batman.png" alt="Batman: Arkham Knight">
+                </a>
+
+                <p>Batman: Arkham Knight</p>
+            </section>
+
+            <section class="container">
+                <a href="#">
+                    <img class="img" src="./Images/Games/GT_7.png" alt="Gran Turismo 7">
+                </a>
+
+                <p>Gran Turismo 7</p>
+            </section>
+        </section>
+
+    </main>
+
+    <script>
+        function openBar(){
+            const sidebar = document.querySelector('.side-wrapper');
+            sidebar.style.display = 'block';
+        }
+
+        function closeBar(){
+            const sidebar = document.querySelector('.side-wrapper');
+            sidebar.style.display = 'none';
+        }
+    </script>
+</body>
+</html>

@@ -3,22 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
+    <title>Console</title>
 
     <style>
         *{
             font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-            color: aliceblue;
         }
-
         body{
             margin: 0;
-            padding: 0;
+            padding: 0; 
             background-color: rgb(11, 11, 11);
         }
 
     /* navbar start*/    
-    .nav{
+        .nav{
             position: fixed;
             width: 100%;
             top: 0px;
@@ -176,169 +174,139 @@
         }
     /*hamburger menu end*/
 
-    /*main content starts*/
-        /*header section*/
-        .header-content{
-            margin-top: 5rem;
-            
-        }
-        .headers{
-            text-align: center;
-        }
-        .headers h1{
-            font-size: 3rem;
-        }
-        .headers h2{
-            font-size: 1.5rem;
-        }
-        .header-button a{
-            text-decoration: none;
-        }
-        .header-button{
-            background-color: rgb(188, 44, 44);
-            width: 30%;
-            margin: auto;
-            padding: .1rem;
-            border-radius: 50px;
-        }
-        .header-button:hover{
-            transform: scale(1.1);
-            transition: transform .2s ease-in-out;
-        }
-        .header-content img{
-            margin-top: 4rem;
-            width: 100%;
-        }
+    /*main content start*/
+    .hero-img{
+        width: 100%;
+        margin-top: 3rem;
+    }
 
-        @media(max-width: 900px){
-            .headers h1{
-                font-size: 2rem;
-            }
-            .headers h2{
-                font-size: 1rem;
-            }
-        }
+    .features h1{
+        color: aliceblue;
+        font-size: 3rem;
+        margin-top: 5rem;
+        text-align: center;
+    }
 
-        /*console section*/
-        .console-section{
-            margin-top: 5rem;
-            margin-bottom: 5rem;
+    .all-features{
+        display: flex;
+        justify-content: space-evenly;
+        
+        padding: 5rem;
+        margin: 4rem 2rem;
+        border: 2px solid aliceblue;
+        border-radius: 5px;
+    }
+    @media(max-width:932px){
+        .all-features{
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 0;
         }
-        .console-section h2{
-            text-align: center;
-            font-size: 3rem;
+        
+        .main-features{
+            padding: 3rem 0rem;
         }
-        .console-row{
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-            margin-top: 4rem;
+    }
+
+    .main-features{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .main-features img{
+        height: 100px;
+        width: 100px;
+    }
+    .main-features img:hover{
+        transform: rotate(360deg);
+        transition: transform 1s ease;
+    }
+    .main-features h3{
+        color: aliceblue;
+        font-size: 1rem;
+    }
+    .main-features p{
+        color: aliceblue;
+        width: 20ch;
+        margin-top: 2rem;
+        padding: 1rem;
+        border: 2px solid rgb(188, 44, 44);
+        border-radius: 5px;
+        background-color: rgb(44, 44, 44);
+    }
+    .main-features p:hover{
+        transform: scale(1.2);
+        transition: transform .2s ease-in-out;
+    }
+
+    /*PS% versions*/
+    .versions{
+        margin: 8rem 3rem 5rem;
+    }
+    .all-version{
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    .each-version{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .each-version h3{
+        color: aliceblue;
+        font-size: 2rem;
+        padding-bottom: 1rem;
+    }
+    .each-version img{
+        display: block;
+        max-width: 450px;
+        /*max-width: 450px;
+        min-width: 300px;*/
+        box-shadow: -2px 2px 5px rgb(188, 44, 44);
+    }
+    .each-version p{
+        color: aliceblue;
+        margin-top: 1rem;
+    }
+    .each-version button{
+        padding: .8rem;
+        margin-top: 1rem;
+        background-color: rgb(188, 44, 44);
+        color: aliceblue;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    .each-version button:hover{
+        transform: scale(1.2);
+        transition: transform .2s ease;
+    }
+    .each-version button:active{
+        background-color: rgb(54, 54, 54);
+    }
+
+    @media(max-width:932px){
+        .versions{
+            margin: 0;
         }
-        .console-price{
+        .all-version{
             display: flex;
             flex-direction: column;
+            justify-content: center;
             align-items: center;
         }
-        .console-price .para{
-            width: 20ch;
-            border: 2px solid aliceblue;
-            padding: 1.5rem;
+        .each-version{
+            margin-bottom: 5rem;
+            padding: 0;
         }
-        .console-price .para:hover{
-            background-color: rgb(188, 44, 44);
-            transition: background-color .5s ease;
+    }
+    @media(max-width:600px){
+        .each-version img{
+            width: 300px;
         }
-        .console-price a{
-            background-color: rgb(188, 44, 44);
-            text-decoration: none;
-            padding: 1rem;
-            border-radius: 50px;
-        }
-        .console-price a:hover{
-            transform: scale(1.1);
-            transition: transform .2s ease-in-out;
-        }
-        .console-section img{
-            width: 50%;
-            box-shadow: 2px 2px 5px rgb(188, 44, 44);
-        }
-        .console-trailer{
-            padding-top: 5rem;
-            width: 500px;
-            height: 281px;
-            margin: auto;
-        }
-
-        @media(max-width:700px){
-            .console-section h2{
-            font-size: 2.5rem;
-            }
-
-            .console-row{
-                flex-direction: column;
-            }
-
-            .console-row img{
-                margin-bottom: 3rem;
-            }
-
-            .console-section img{
-                width: 80%;
-            }
-        }
-
-        @media(max-width: 500px){
-            .console-trailer{
-                padding-top: 5rem;
-                width: 320px;
-                height: 180px;
-                margin: auto;
-            }
-        }
-
-        /*deals section*/
-        .deals-section img{
-            width: 100%;
-        }
-        .deals-content{
-            display: flex;
-            justify-content: space-evenly;
-            align-items: center;
-            margin-top: 1rem;
-            margin-bottom: 3rem;
-        }
-        .deals-content p{
-            width: 20ch;
-            border: 2px solid aliceblue;
-            padding: 1.2rem;
-        }
-        .deals-content p:hover{
-            background-color: rgb(188, 44, 44);
-            transition: background-color .5s ease;
-        }
-        .deals-content a{
-            background-color: rgb(188, 44, 44);
-            text-decoration: none;
-            padding: 1rem;
-            border-radius: 50px;
-        }
-        .deals-content a:hover{
-            transform: scale(1.1);
-            transition: transform .2s ease-in-out;
-        }
-
-        @media(max-width: 500px){
-            .deals-content{
-                flex-direction: column;
-                margin-top: 1rem;
-            }
-
-            .deals-content p, 
-            .deals-content a{
-                margin-bottom: 2rem;
-            }
-        }
-    /*main content ends*/
+    }
+    /*main content end*/
     </style>
 </head>
 <body>
@@ -397,49 +365,65 @@
     </nav>
 
     <main>
-        <section class="header-content">
-            <div class="headers">
-                <h1>Welcome to the PlayStation Store</h1>
-                
-                <div class="header-button">
-                    <a href="games.html">
-                        <h2>Your Gaming Starts Here</h2>
-                    </a>
+        <div>
+            <img class="hero-img" src="Images/Backgrounds/ps5_main_console_image.webp" alt="PS5 image">
+        </div>
+
+        <section class="features">
+            <h1>PLAY LIKE NEVER BEFORE</h1>
+
+            <div class="all-features">
+                <div class="main-features">
+                    <img src="Images/logos/lightning-speed.webp" alt="lightning speed">
+    
+                    <h3>lightning speed</h3>
+
+                    <p>Experience lightning-fast loading with an ultra-high speed SSD.</p>
                 </div>
 
-            </div>
+                <div class="main-features">
+                    <img src="Images/logos/breath-taking-immersion.webp" alt="breath taking immersion">
+    
+                    <h3>breath taking immersion</h3>
 
-            <img src="Images/Backgrounds/img1.jpg" alt="header picture">
-        </section>
+                    <p>Experience deeper immersion with support for haptic feedback, adaptive triggers and 3D Audio.</p>
+                </div>
 
-        <section class="console-section">
-            <h2>Introducing the PS5 console</h2>
+                <div class="main-features">
+                    <img src="Images/logos/stunning-games.webp" alt="stunning games">
+    
+                    <h3>stunning games</h3>
 
-            <div class="console-row">
-                <img src="Images/consoles/ps5-slim-disc-console.webp">
-
-                <div class="console-price">
-                    <p class="para">Experience an all-new generation of incredible PlayStation games.</p>
-                    <p class="price">Buy from $449,99</p>
-                    <a href="console.html">Find out more</a>
+                    <p>Experience an all-new generation of incredible PlayStation games.</p>
                 </div>
             </div>
-
-            <div class="console-trailer">
-                <iframe width="100%" height="100%" src="https://www.youtube.com/embed/VV6dJjdWvjk?si=OWj-pCdWGjV-6PrZ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-            </div>
         </section>
 
-        <section class="deals-section">
-            <img src="Images/Backgrounds/img2.webp" alt="deals image">
+        <section class="versions">
+            <div class="all-version">
+                <div class="each-version">
+                    <h3>Disc Version</h3>
+                    
+                    <img src="Images/consoles/slim-disc 2.jpg" alt="PS5 disc version">
 
-            <div class="deals-content">
-                <p>Never miss out on the list of amazing deals being offered year round.</p>
-                <a href="deals.html">View current deals</a>
+                    <p>$499.99</p>
+
+                    <button>Purchase</button>
+                </div>
+
+                <div class="each-version">
+                    <h3>Digital Version</h3>
+                    
+                    <img src="Images/consoles/slim-digital.jpg" alt="PS5 digital version">
+
+                    <p>$449.99</p>
+
+                    <button>Purchase</button>
+                </div>
             </div>
         </section>
     </main>
-    
+
     <script>
         function openBar(){
             const sidebar = document.querySelector('.side-wrapper');
